@@ -1,20 +1,18 @@
-import React from 'react';
+import React from "react";
 
+function Tweet({ name, message, tweetList, setTweetList }) {
+  function deleteTweet() {
+    setTweetList(tweetList.filter((state) => state.id !== message.id));
+  }
 
-
-function Tweet({name,message}) {
-
-
-    return(
-        <div>
-            <h1>{name}</h1>
-            <h3>{message}</h3>
-            <button>Like</button>
-            <button>Delete</button>
-        </div>
-    );
-
-
+  return (
+    <div>
+      <h1>{name}</h1>
+      <h3>{message.message}</h3>
+      <button>Like</button>
+      <button onClick={deleteTweet}>Delete</button>
+    </div>
+  );
 }
 
 export default Tweet;
